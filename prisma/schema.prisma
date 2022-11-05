@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  uuid     String  @id @unique @default(uuid()) @db.VarChar(255)
+  id       Int     @unique @default(autoincrement())
+  email    String  @unique @map("email") @db.VarChar(255)
+  username String  @unique @default("user") @db.VarChar(255)
+  password String  @db.VarChar(255)
+  social   social?
+}
+
+model social {
+  id        Int     @id @default(autoincrement())
+  user      user    @relation(fields: [userid], references: [id])
+  userid    Int     @unique @db.Int()
+  facebook  String? @db.VarChar(255)
+  instagram String? @db.VarChar(255)
+  github    String? @db.VarChar(255)
+  linkedin  String? @db.VarChar(255)
+  twitter   String? @db.VarChar(255)
+  discord   String? @db.VarChar(255)
+  whatsapp  String? @db.VarChar(255)
+}
+
+model Session {
+  id        String   @id
+  sid       String   @unique
+  data      String
+  expiresAt DateTime
+}
