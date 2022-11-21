@@ -1,0 +1,21 @@
+GET http://localhost:5000/socials
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InV1aWQiOiI1NjFhODYyMS02ZjlmLTQ3NjMtODRiNC01MjgzMmEwN2Q0NWUiLCJpZCI6MiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJGFyZ29uMmlkJHY9MTkkbT02NTUzNix0PTMscD00JEVqMDVDTVduai93NUN6ZDJ4NGI5ekEkV25uYW5MOURyK080SWpKc3E4SERHb3lwcXZ3YmxXODkvdE5aZlB2L2tzYyJ9LCJqdGkiOiIzN2VmN2RkZC01Zjg2LTRkZjEtYTFiNC1mYmU5NzljYmMxZjQiLCJpYXQiOjE2Njg3ODg4MjQsImV4cCI6MTY2ODc5MjQyNH0.oTc3IAw-a83UDTfDzUSMQK6rHPrOUQuxBMaEwISMGOc
+
+###
+// add social medias
+POST http://localhost:5000/socials
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InV1aWQiOiI1NjFhODYyMS02ZjlmLTQ3NjMtODRiNC01MjgzMmEwN2Q0NWUiLCJpZCI6MiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJGFyZ29uMmlkJHY9MTkkbT02NTUzNix0PTMscD00JEVqMDVDTVduai93NUN6ZDJ4NGI5ekEkV25uYW5MOURyK080SWpKc3E4SERHb3lwcXZ3YmxXODkvdE5aZlB2L2tzYyJ9LCJqdGkiOiIzN2VmN2RkZC01Zjg2LTRkZjEtYTFiNC1mYmU5NzljYmMxZjQiLCJpYXQiOjE2Njg3ODg4MjQsImV4cCI6MTY2ODc5MjQyNH0.oTc3IAw-a83UDTfDzUSMQK6rHPrOUQuxBMaEwISMGOc
+Content-Type: application/json
+
+{
+    "github": "https://github.com/krausweln"
+}
+
+###
+// update social media links
+PATCH http://localhost:5000/socials
+Content-Type: application/json
+
+{
+    "facebook": "http://localhost:5000"
+}

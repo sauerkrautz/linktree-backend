@@ -1,10 +1,52 @@
-POST http://localhost:5000/users
+POST http://localhost:5000/user
 Content-Type: application/json
 
 {
-    "email": "rizqi@gmail.com",
+    "email": "user@gmail.com",
+    "username": "user",
+    "password": "user123",
+    "role": "user"
+}
+
+###
+// 59bb3abd-4726-4e30-8c46-769967536875
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InV1aWQiOiI1OWJiM2FiZC00NzI2LTRlMzAtOGM0Ni03Njk5Njc1MzY4NzUiLCJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkYXJnb24yaWQkdj0xOSRtPTY1NTM2LHQ9MyxwPTQkN2JWOEtCNFFsejhTMXhJaGZJczZXZyRkenpJb3ZnbkJzd2JoM24xMFlmQ01kMGZma3ZaSENUU3p4L28yc3UwUjhVIiwicm9sZSI6ImFkbWluIiwicmVmcmVzaFRva2VuIjp7InJldm9rZWQiOmZhbHNlfX0sImp0aSI6Ijk0ZDJiNGQyLWEwNDItNDZlNi04NzQ1LWM0MzA5NDZlN2Q3ZiIsImlhdCI6MTY2ODgyOTYzNCwiZXhwIjoxNjY4ODMzMjM0fQ.8UcOBKRHun3vYpHTwugNhA0BX9dOdYjGTN-TswS8x5Y
+###
+//login
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
     "password": "admin123"
 }
 
 ###
-GET http://localhost:5000/users
+//login
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "user@gmail.com",
+    "password": "user123"
+}
+
+###
+// logout
+DELETE http://localhost:5000/logout
+
+###
+// update user
+PATCH http://localhost:5000/update/59bb3abd-4726-4e30-8c46-769967536875
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InV1aWQiOiI1NjFhODYyMS02ZjlmLTQ3NjMtODRiNC01MjgzMmEwN2Q0NWUiLCJpZCI6MiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJGFyZ29uMmlkJHY9MTkkbT02NTUzNix0PTMscD00JEVqMDVDTVduai93NUN6ZDJ4NGI5ekEkV25uYW5MOURyK080SWpKc3E4SERHb3lwcXZ3YmxXODkvdE5aZlB2L2tzYyJ9LCJqdGkiOiIzN2VmN2RkZC01Zjg2LTRkZjEtYTFiNC1mYmU5NzljYmMxZjQiLCJpYXQiOjE2Njg3ODg4MjQsImV4cCI6MTY2ODc5MjQyNH0.oTc3IAw-a83UDTfDzUSMQK6rHPrOUQuxBMaEwISMGOc
+Content-Type: application/json
+
+{
+    "role": "admin"
+}
+
+
+
+
+
